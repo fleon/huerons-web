@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html ng-app="huerons" ng-controller="MainController" >
+<head>
+<meta charset="utf-8">
+<title>Huerons</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/flat-ui.css">
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.js"></script>
+<script src="skrollr.js"></script>
+<script src="script.js"></script>
+<base target="_blank">
+</head>
+
+<body ng-cloak class="ng-cloak" ng-init="hueronSize = 100"
+	data-0="background: rgb(22, 160, 133)"
+	data-300p="background: rgb(22, 160, 133)"
+	data-370p="background: rgb(192, 57, 43)"
+	data-500p="background: rgb(192, 57, 43)"
+	data-600p="background: rgb(211, 84, 0)"
+	data-1350p="background: rgb(211, 84, 0)"
+	data-1450p="background: rgb(41, 128, 185)"
+	data-1550p="background: rgb(41, 128, 185)"
+	data-1650p="background: rgb(142, 68, 173)"
+	data-1800p="background: rgb(142, 68, 173)"
+	data-1900p="background: rgb(39, 174, 96)"
+	>
+	<div class="pts-container  huerons-container">
+		<iframe class="huerons-video"
+			data-300p="top: 0%;"
+			data-400p="top: -100%"
+			width="800" height="450"
+			src="//www.youtube.com/embed/oZ1FDk4efQw" frameborder="0" allowfullscreen></iframe>
+		<div ng-repeat="pts in r track by $index" class="r-{{$index}}">
+			<div class="hueron"
+				ng-repeat="pt in pts"
+				ng-style="{left: pt.x * hueronSize - hueronSize / 2, top: pt.y * hueronSize - hueronSize / 2}">
+			</div>
+		</div>
+	</div>
+	<div class="pts-container huerons-container">
+		<div style="position:relative"
+			data-300p="left: 0%; top: 0%"
+			data-350p="left: 0%; top: -25%"
+			data-500p="left: 0%; top: -25%"
+			data-600p="left: 0%; top: -125%">
+			<div class="hueron  hueron--no-bg  hueron--letter" ng-repeat="letter in 'huerons'.split('') track by $index"
+				ng-style="{left: ($index - 3) * hueronSize - hueronSize / 2, top: -hueronSize / 2}">
+				{{letter.toUpperCase()}}
+			</div>
+		</div>
+		<div class="hueron  hueron--no-bg  hueron--arrow" ng-style="{left: -hueronSize / 2, top: 1 * hueronSize - hueronSize / 2}"
+			ng-click="scrollTo(5, 3200)">&#187;</div>
+	</div>
+	<button class="btn-back"
+		ng-click="scrollTo(0, 1000)"
+		data-0="color: rgb(22, 160, 133)"
+		data-300p="color: rgb(22, 160, 133)"
+		data-370p="color: rgb(192, 57, 43)"
+		data-500p="color: rgb(192, 57, 43); margin-left: -100%"
+		data-600p="color: rgb(211, 84, 0); margin-left: 0%"
+		data-1350p="color: rgb(211, 84, 0)"
+		data-1450p="color: rgb(41, 128, 185)"
+		data-1550p="color: rgb(41, 128, 185)"
+		data-1650p="color: rgb(142, 68, 173)"
+		data-1800p="color: rgb(142, 68, 173)"
+		data-1900p="color: rgb(39, 174, 96)"><span class="rotate">&#187;</span> &nbsp; top</button>
+	<div class="pts-container">
+		<div class="iphone-container-"
+			data-0="left: -60%; top: 100%; margin-left:-142px; margin-top: -327px"
+			data-300p="left: -60%; top: 100%; margin-left:-142px; margin-top: -327px"
+			data-370p="left: 0; top: 0; margin-left: -142px; margin-top: 0"
+			data-500p="left: 0%; top: 0%"
+			data-600p="left: 0%; top: -120%"
+			>
+			<div class="carousel">
+				<div ng-style="{width: images.length * 270}">
+					<img ng-src="{{img}}" ng-repeat="img in images"/>
+				</div>
+			</div>
+
+		</div>
+		<div class="huerons-description"
+			data-0="left: 100%; top: 100%"
+			data-300p="left: 100%; top: 100%"
+			data-370p="left: 0%; top: 0%"
+			data-500p="left: 0%; top: 0%"
+			data-600p="left: 0%; top: -100%"
+			>
+			A unique puzzle game to enchant your mind.
+			<button
+				data-0="left: 1000px"
+				data-370p="left: 1000px"
+				data-400p="left: 0px"
+				ng-click="scrollTo(6, 400)"
+				>gameplay</button>
+			<button
+				data-0="left: 1000px"
+				data-380p="left: 1000px"
+				data-410p="left: 0px"
+				>press kit</button>
+			<button
+				data-0="left: 1000px"
+				data-400p="left: 1000px"
+				data-430p="left: 0px"
+				ng-click="scrollTo(15, 500)"
+				>the team</button>
+			<button
+				data-0="left: 1000px"
+				data-420p="left: 1000px"
+				data-450p="left: 0px"
+				ng-click="scrollTo(17, 500)"
+				>recognition</button>
+
+			<button
+				data-0="left: 1000px"
+				data-440p="left: 1000px"
+				data-470p="left: 0px"
+				ng-click="scrollTo(19.5, 500)"
+				>download</button>
+		</div>
+		<div class="huerons-title"
+			data-464p="top: 100%"
+			data-600p="top: -36%"
+			data-1350p="top: -36%"
+			data-1450p="top: -130%"
+			>
+			gameplay
+		</div>
+		<div class="how-to-play"
+			data-0="top: 100%"
+			data-500p="top: 100%;"
+			data-600p="top: 0%; transform: translate(-50%, -50%)"
+			data-750p="top: 0%; transform: translate(-50%, -50%)"
+			data-800p="top: 0%; transform: translate(-110%, -50%)"
+			data-950p="top: 0%; transform: translate(-110%, -50%)"
+			data-1250p="top: 0%; transform: translate(-170%, -50%); top: 0%"
+			data-1350p="top: 0%; transform: translate(-170%, -50%); top: 0%"
+			data-1450p="left: 0%; top: -100%">
+			<img class="circle" ng-repeat="i in '123456789'.split('')" src="circle.png"/>
+			<div class="circle-small"
+				data-600p="margin-left: 0px; margin-top: 0px"
+				data-650p="margin-left: 90px; margin-top: 0px"
+				data-700p="margin-left: 90px; margin-top: 0px"
+				data-750p="margin-left: 90px; margin-top: 90px"
+				></div>
+			<div class="circle-small"
+				data-600p="margin-left: 180px; margin-top: 0px"
+				data-650p="margin-left: 90px; margin-top: 0px;"
+				data-700p="margin-left: 90px; margin-top: 0px;"
+				data-750p="margin-left: 90px; margin-top: 90px"
+				></div>
+			<div class="circle-small"
+				data-650p="margin-left: 0px; margin-top: 180px"
+				data-700p="margin-left: 90px; margin-top: 180px"
+				data-750p="margin-left: 90px; margin-top: 90px"
+				></div>
+			<div class="circle-small"
+				data-650p="margin-left: 180px; margin-top: 180px"
+				data-700p="margin-left: 90px; margin-top: 180px;"
+				data-750p="margin-left: 90px; margin-top: 90px"
+				></div>
+			<div class="label"
+				data-550p="top: 100%"
+				data-650p="top: 25%"
+				>fusion</div>
+		</div>
+		<div class="how-to-play"
+			data-750p="left: 100%; transform: translate(-50%, -50%)"
+			data-850p="left: 0%; transform: translate(10%, -50%)"
+			data-950p="left: 0%; transform: translate(10%, -50%)"
+			data-1250p="left: 0%; transform: translate(-50%, -50%); top: 0%"
+			data-1350p="left: 0%; transform: translate(-50%, -50%); top: 0%"
+			data-1450p="left: 0%; top: -100%">
+			<img class="circle" ng-repeat="i in '123456789'.split('')" src="circle.png"/>
+			<div class="circle-small"
+				data-850p="margin-left: 90px; margin-top: 0px"
+				data-900p="margin-left: 0px;  margin-top: 0px; visibility: visible;"
+				data-901p="visibility: hidden;"
+				></div>
+			<div class="circle-small"
+				data-850p="margin-left: 0px; margin-top: 90px"
+				data-900p="margin-left: 0px; margin-top: 0px; height: 30px; width: 30px;"
+				data-950p="height: 0px; width: 0px; margin-left: 15px; margin-top: 15px;"
+				data-951p="margin-left: 195px; margin-top: 105px;"
+				data-1000p="margin-left: 180px; margin-top: 90px; width: 30px; height: 30px;"
+				data-1050p="margin-left: 180px; margin-top: 90px;"
+				data-1100p="margin-left: 90px"
+				></div>
+			<div class="circle-small"
+				data-1000p="margin-left: 90px; margin-top: 90px"
+				data-1050p="margin-left: 90px; margin-top: 180px"
+				data-1100p="margin-left: 90px; margin-top: 90px"
+				></div>
+			<div class="circle-small"
+				data-1000p="margin-left: 180px; margin-top: 180px"
+				data-1050p="margin-left: 90px; margin-top: 180px"
+				data-1100p="margin-left: 90px; margin-top: 90px"
+				></div>
+			<div class="portal  portal--inwards">
+				<div class="circle-portal"
+					></div>
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+			</div>
+			<div class="portal  portal--outwards" style="left: 200px; top: 110px;">
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+				<div class="circle-portal"></div>
+			</div>
+			<div class="label"
+				data-550p="top: 100%"
+				data-650p="top: 25%"
+				>challenges</div>
+		</div>
+		<div class="how-to-play"
+			data-950p="left: 100%; transform: translate(-50%, -50%)"
+			data-1250p="left: 0%; transform: translate(70%, -50%); top: 0%"
+			data-1350p="left: 0%; transform: translate(70%, -50%); top: 0%"
+			data-1450p="left: 0%; top: -100%"
+			>
+			<img class="circle  circle--big" src="circle-big.png"/>
+			<div class="big-hueron-container">
+				<div class="big-hueron"
+					data-1150p="transform: rotate(45deg)"
+					data-1450p="transform: rotate(405deg)"
+					>
+					<div class="circle-hueron  circle-hueron--top"></div>
+					<div class="circle-hueron  circle-hueron--bottom"></div>
+					<div class="circle-hueron  circle-hueron--left"></div>
+					<div class="circle-hueron  circle-hueron--right"></div>
+				</div>
+			</div>
+			<div class="label"
+				data-550p="top: 100%"
+				data-650p="top: 25%"
+				>bonuses</div>
+		</div>
+		<div class="huerons-title"
+			data-1317p="top: 100%"
+			data-1450p="top: -33%"
+			data-1550p="top: -33%"
+			data-1650p="top: -133%"
+			>
+			the team
+		</div>
+		<div class="team"
+			data-1400p="top: 100%"
+			data-1500p="top: 0%"
+			data-1550p="top: 0%"
+			data-1650p="top: -100%">
+			<div class="team-member">
+				<img class="circle  circle--medium" src="circle-big.png"/>
+				<div>
+					<img class="photo" alt="Mudit Jaju" src="http://www.gravatar.com/avatar/69c8367a1b816764922f0ced63928ead?s=80"/>
+					<div class="team-member__name">Mudit Jaju</div>
+					<div class="team-member__designation">Game Design, Programming</div>
+					<div class="team-member__contact">
+						<a class="icon  fui-twitter" style="font-size: 22px;"  href="http://twitter.com/muditjaju"></a>
+						<a class="icon  fui-mail" style="font-size: 20px; top: -2px; margin-right: 7px"  href="mailto:jajumudit@gmail.com"></a>
+						<a class="icon  fui-export" style="top: -2px;"  href="http://infiniteeurekas.in"></a>
+					</div>
+				</div>
+			</div>
+			<div class="team-member">
+				<img class="circle  circle--medium" src="circle-big.png"/>
+				<div>
+					<img class="photo" alt="Mudit Jaju" src="http://www.gravatar.com/avatar/fdce3ad4c57f9ca651c168a8cf1f9416?s=80"/>
+					<div class="team-member__name">Himanshu Kapoor</div>
+					<div class="team-member__designation">Art, UI Design</div>
+					<div class="team-member__contact">
+						<a class="icon  fui-twitter" style="font-size: 22px;"  href="http://twitter.com/fleon"></a>
+						<a class="icon  fui-mail" style="font-size: 20px; top: -2px; margin-right: 7px"  href="mailto:himanshu@fleon.org"></a>
+						<a class="icon  fui-export" style="top: -2px"  href="http://fleon.org"></a>
+					</div>
+				</div>
+			</div>
+			<div class="team-member">
+				<img class="circle  circle--medium" src="circle-big.png"/>
+				<div>
+					<img class="photo" alt="Mudit Jaju" src="http://www.gravatar.com/avatar/4aadf2e6e2c03d26875dc2ad118b8148?s=80"/>
+					<div class="team-member__name">Kinshuk Sunil</div>
+					<div class="team-member__designation">Business Relations, Audio</div>
+					<div class="team-member__contact">
+						<a class="icon  fui-twitter" style="font-size: 22px;"  href="http://twitter.com/teamhash"></a>
+						<a class="icon  fui-mail" style="font-size: 20px; top: -2px; margin-right: 7px"  href="mailto:kinshuk@hashstash.in"></a>
+						<a class="icon  fui-export" style="top: -2px"  href="http://hashstash.in"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="huerons-title"
+			data-1517p="top: 100%"
+			data-1650p="top: -33%"
+			data-1800p="top: -33%"
+			data-1900p="top: -133%"
+			>
+			recognition
+		</div>
+		<div class="awards"
+			data-1600p="top: 100%"
+			data-1700p="top: 0%"
+			data-1800p="top: 0%"
+			data-1900p="top: -100%">
+			<a class="award" href="http://blackberryappcontest.com/gameon/" >
+				<img src="bb10.jpg" alt="Blackberry logo white" class="award__logo">
+				<div class="award__title">
+					Best Strategy Game
+				</div>
+				<div class="award__subtitle">
+					Blackberry&reg; 10 Game On Contest
+				</div>
+			</a>
+			<a class="award" href="http://asia.indieprize.org/#entry-15">
+				<img src="ccasia.png" alt="Blackberry logo white" class="award__logo">
+				<div class="award__title">
+					Official Selection
+				</div>
+				<div class="award__subtitle">
+					Indie Showcase at Casual Connect Asia 2014
+				</div>
+			</a>
+		</div>
+		<div class="huerons-title"
+			data-1817p="top: 100%"
+			data-1950p="top: -5%"
+			>
+			coming soon
+		</div>
+		<div class="footer"
+			data-1900p="top: 100%"
+			data-1950p="top: 50%;">
+			Copyright &copy; 2014 Infinite Eurekas, All Rights Reserved. <br>Apple&reg;, the Apple logo, iPhone&reg;, and iPod&reg; touch are trademarks of Apple Inc., registered in the U.S. and other countries. App Store&reg; is a service mark of Apple Inc. <br>BlackBerry&reg; and related trademarks, names and logos are the property of BlackBerry Limited and are registered and/or used in the U.S. and other countries.
+		</div>
+	</div>
+</body>
+</html>
